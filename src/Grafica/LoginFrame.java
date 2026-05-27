@@ -3,7 +3,7 @@ package Grafica;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
-public class LoginFrame extends JPanel implements ActionListener {
+public class LoginFrame extends JPanel { //implements ActionListener {
     private JPanel frame_login;
     private JLabel label_titolo;
     private JTextField text_name;

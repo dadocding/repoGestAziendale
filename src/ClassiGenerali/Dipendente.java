@@ -4,10 +4,7 @@ public class Dipendente {
     private String nome;
     private String badge_code;
 
-    private char stabilimento; //divisione stabilimento
-    private String compito; //divisione singolo compito nello stabilimento
-
-    private enum compito{
+    public enum Compito{
         ACCETAZIONE,
         MULETTISTA,
         OPERAIO,
@@ -19,16 +16,41 @@ public class Dipendente {
         UFF_MARKETING
     }
 
+    public enum Stabilimento{
+        A,
+        B,
+        C,
+        D,
+        E,
+        F,
+        G,
+        H
+    }
+
+    private Stabilimento stabilimento;
+    private Compito compito;
+
+    public Dipendente(String nome, String badge_code, Stabilimento stabilimento, Compito compito) throws BadgeNonValidoException {
+        this.nome = nome;
+        if(badge_code.length() != 9){
+            throw new BadgeNonValidoException("Badge code invalido");
+        }
+
+        this.badge_code = badge_code;
+        this.stabilimento = stabilimento;
+        this.compito = compito;
+    }
+
     public void setNome(String nome){
         this.nome = nome;
     }
     public void setBadgEcode(String badge_code){
         this.badge_code = badge_code;
     }
-    public void setStabilimento(char stabilimento){
+    public void setStabilimento(Stabilimento stabilimento){
         this.stabilimento = stabilimento;
     }
-    public void setCompito(String compito){
+    public void setCompito(Compito compito){
         this.compito = compito;
     }
 
@@ -38,10 +60,10 @@ public class Dipendente {
     public String getBadgeCode(){
         return this.badge_code;
     }
-    public char getStabilimento(){
+    public Stabilimento getStabilimento(){
         return this.stabilimento;
     }
-    public String getCompito(){
+    public Compito getCompito(){
         return this.compito;
     }
 
