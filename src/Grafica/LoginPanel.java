@@ -1,10 +1,9 @@
 package Grafica;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 
-public class LoginFrame extends JPanel { //implements ActionListener {
-    private JPanel frame_login;
+public class LoginPanel extends JPanel { //implements ActionListener {
+    private JPanel login_panel;
     private JLabel label_titolo;
     private JTextField text_name;
     private JPasswordField text_password;
@@ -16,11 +15,15 @@ public class LoginFrame extends JPanel { //implements ActionListener {
 
     //private GestionaleAzienda gestionale_azienda;
 
-    public LoginFrame(//GestionaleAzienda gest-passato
+    public LoginPanel(//GestionaleAzienda gest-passato
     ) {
         super();
         setLayout(null);
         //this.gestionale_azienda = gest_passato;
+    }
+
+    public JPanel getLogin_panel() {
+        return login_panel;
     }
 
 
